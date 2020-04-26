@@ -1,0 +1,6 @@
+node_modules/
+.cache/
+public/client.js
+public/client.js.map
+public/client.css
+public/client.css.map

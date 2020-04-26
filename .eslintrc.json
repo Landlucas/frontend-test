@@ -1,0 +1,32 @@
+{
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-unused-vars": 1
+  },
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "overrides": [
+    {
+      "files": ["js/**/*.js"],
+      "env": {
+        "browser": true,
+        "es2020": true,
+        "lodash": true
+      }
+    },
+    {
+      "files": [
+        "server.js"
+      ],
+      "env": {
+        "es2020": true,
+        "node": true
+      }
+    }
+  ]
+}

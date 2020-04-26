@@ -1,0 +1,73 @@
+// Dependencies
+@import 'bootstrap';
+
+// 
+// Page styles
+// 
+
+.page-body {
+  background-color: $gray-200;
+}
+
+.container {
+  background-color: $white;
+  padding: 2rem;
+  display: grid;
+  grid-gap: 3rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'fetch    filter '
+    'table    table  '
+    'spinner  spinner';
+  @include media-breakpoint-down(md) {
+    max-width: 100vw;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'fetch'
+      'filter'
+      'table'
+      'spinner';
+    padding: 1rem;
+  }
+}
+
+.fetch {
+  grid-area: fetch;
+}
+
+#fetchInput {
+  max-width: 200px;
+}
+
+.filter {
+  grid-area: filter;
+}
+
+#filterInput {
+  max-width: 400px;
+  @include media-breakpoint-down(md) {
+    max-width: 250px;
+  }
+}
+
+.main-table {
+  grid-area: table;
+  overflow-x: scroll;
+  th {
+    cursor: pointer;
+    &.sorting {
+      text-decoration: underline;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+.spinner-grow {
+  grid-area: spinner;
+}
